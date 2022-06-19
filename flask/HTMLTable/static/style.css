@@ -1,0 +1,13 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    width: 600px;
+    margin: 10px auto;
+}
+
+.table thead{
+    color: orange;
+}

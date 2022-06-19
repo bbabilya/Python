@@ -1,0 +1,60 @@
+INSERT INTO dojos(name)
+VALUES('Mugen Tenshin'),
+('Hayabusa'),
+('Shadow Ninja'),
+('Black Spider Ninja');
+
+SELECT *
+FROM dojos;
+
+DELETE FROM dojos
+WHERE id = 1;
+
+DELETE FROM dojos
+WHERE id = 2;
+
+DELETE FROM dojos
+WHERE id = 3;
+
+INSERT INTO dojos(name)
+VALUES('Mugen Tenshin'),
+('Hayabusa'),
+('Shadow Ninja');
+
+INSERT INTO ninjas(first_name, last_name, age, dojo_id)
+VALUES('Rasetsu', 'of the Darkness', 35, 4),
+('Overlord', 'Genshin', 40, 4),
+('Crimson Queen', 'Elizebet', 33, 4);
+
+SELECT * 
+FROM ninjas;
+
+INSERT INTO ninjas(first_name, last_name, age, dojo_id)
+VALUES('Ayane', 'Kunoichi', 26, 5),
+('Shiden', 'Shinobi', 57, 5),
+('Hayate', 'Shinobi', 28, 5);
+
+INSERT INTO ninjas(first_name, last_name, age, dojo_id)
+VALUES('Ryu', 'Hayabusa', 36, 6),
+('Ryu', 'but with more Muscle', 36, 6),
+('Ryu', 'but Blue', 36, 6);
+
+SELECT *
+FROM ninjas
+WHERE dojo_id = 4;
+
+SELECT *
+FROM ninjas
+WHERE dojo_id = 5;
+
+SELECT    *
+FROM      ninjas
+ORDER BY  id DESC
+LIMIT     1;
+
+
+
+
+
+
+

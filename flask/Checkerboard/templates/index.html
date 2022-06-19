@@ -1,0 +1,26 @@
+<!-- Project by Kaija Pendergast and Brandi Babilya -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1> Checkerboard </h1>
+    <div class="container">
+        {% for i in range(0, column): %}
+        <div class="row">
+            {% for j in range(0, row): %}
+                {% if (j + i) % 2 == 0: %}
+                    <div class ="box" style="background-color:{{color1}};"></div>
+            {% else: %}
+                    <div class ="box" style="background-color:{{color2}};"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

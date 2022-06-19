@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Homepage</title>
+</head>
+<body>
+    <div>
+    <h1>
+        Welcome to the homepage {{ first_name }}!
+        <!-- Jinja uses this to call the value of the parameter. -->
+    </h1>
+        Number of visits: {{session["num_of_visits"]}}
+    <!-- list of to dos for loop -->
+    <ul>
+        {% for element in list_todos: %}
+            <li>
+                {{ element["todo"] }} : {{ element["status"] }}
+            </li>
+    {% endfor %}
+    </ul>
+</div>
+<a href="/todo/new">Add New To Do</a>
+</body>
+</html>

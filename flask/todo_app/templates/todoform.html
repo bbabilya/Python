@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>To Do Form:</title>
+</head>
+<body>
+    <form action="/todo/new" method="POST">
+    <div>
+        <label>
+            New To Do:
+        </label>
+        <input type="text" id="todo" name="todo">
+    </div>
+    <div>
+        <label for="status">
+            Status:
+        </label>
+        <select id="status" name="status">
+            <option value="Complete">
+                Complete
+            </option>
+            <option value="In_Progress">
+                In Progress
+            </option>
+            <option value="Cancelled">
+                Cancelled
+            </option>
+        </select>
+    </div>
+        <input type ="hidden" value="123" id="hidden_id" name="hidden_id">
+    <div>
+        <button type ="submit">
+            Create
+        </button>
+    </div>
+</form>
+</body>
+</html>
