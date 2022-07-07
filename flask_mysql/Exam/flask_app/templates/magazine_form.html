@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <div class="header d-flex flex-direction-row align-items-center justify-content-around w-100">
+        <h1>Add New Magazine</h1>
+        <div class="navigation d-flex justify-content-around align-items-center w-25">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/user/{{ user_in_db.id }}/update_user">Account</a>
+            <a href="/logout"><button type="button" class="bg-primary btn" mt-2>Logout</button></a>
+        </div>
+    </div>
+
+    <div class="container w-75">
+        <form action="/magazines/add_magazine" method="POST" class="d-flex justify-content-between">
+            <div class="form-left w-25">
+                <label for="name" class="form-label m-2">Name:</label>
+                <input type="text" id="name" name ="name" placeholder="Magazine Name" class="form-control">
+                {% with errors = get_flashed_messages(category_filter=["name_length"]) %}
+                    {% if errors %}
+                        <ul class="flashes">
+                            {% for msg in errors %}
+                                <li class="font-size: small">{{msg}}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+
+                <label for="description" class="form-label m-2">Description:</label>
+                <input type="text" id="description" name ="description" placeholder="Describe your Magazine!" class="form-control">
+                {% with errors = get_flashed_messages(category_filter=["description_length"]) %}
+                {% if errors %}
+                    <ul class="flashes">
+                        {% for msg in errors %}
+                        <li class="font-size: small">{{msg}}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            <button type="submit" class="btn btn-primary m-2">Add Magazine</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

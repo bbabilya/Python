@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+  <div class="navigation d-flex justify-content-end align-items-center w-75 mx-auto pt-2">
+      <a href="/magazines/new" class="pe-4">Add Magazine</a>
+      <a href="/dashboard" class="pe-4">Dashboard</a>
+      <a href="/user/{{ user_in_db.id }}/update_user">Account</a>
+      <a href="/logout" class="pe-4"><button type="button" class="bg-primary btn" mt-2>Logout</button></a>
+  </div>
+
+  <div class="container w-75">
+    <h1>{{ one_magazine.name }}</h1>
+    <div class="magazines border border-dark rounded w-50">
+      <ul class="list-unstyled p-2">
+            <li class="pt-2 pb-2">Added by {{ one_magazine.first_name }} {{one_magazine.last_name }}</li>
+            <li class="pb-2 fw-lighter">Description:</li>
+            <li>{{ one_magazine.description}}</li>
+      </ul>
+    </div>
+  </div>
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
